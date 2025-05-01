@@ -256,6 +256,10 @@
       <p>سرویس آپلود فایل ما به شما این امکان را می‌دهد که فایل‌هایی با حجم حداکثر ۲۰ مگابایت را به راحتی آپلود کرده و لینک مستقیم دریافت کنید. این سرویس برای استفاده‌های شخصی، تجاری و به اشتراک‌گذاری آسان فایل‌ها طراحی شده است.</p>
     </div>
   </div>
+    <div class="section">
+  <h2 class="section-title">ذکر روز</h2>
+  <div class="section-content" id="zekrBox" style="font-size: 1.3rem; color: #00ffe5; margin-top: 10px;"></div>
+</div>
 
   <div class="section">
     <h2 class="section-title">مزایا</h2>
@@ -352,6 +356,23 @@
     xhr.open('POST', '/upload.php', true);
     xhr.send(formData);
   });
+    (function () {
+  const zekrByDay = [
+    'یا رب العالمین',
+    'یا ذالجلال و الاکرام',
+    'یا قاضی الحاجات',
+    'یا ارحم الراحمین',
+    'یا حی یا قیوم',
+    'لا اله الا الله الملک الحق المبین',
+    'اللهم صل علی محمد و آل محمد'
+  ];
+
+  const today = new Date().getDay(); 
+  const persianDays = [6, 0, 1, 2, 3, 4, 5];
+  const zekrText = zekrByDay[persianDays.indexOf(today)];
+
+  document.getElementById('zekrBox').textContent = zekrText;
+})();
 </script>
 
 </body>
